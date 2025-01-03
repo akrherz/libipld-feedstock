@@ -8,6 +8,9 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/libipld-{{ version }}.tar.gz
   sha256: c532323efb36e63df8005f075afe01d726aa170999ee0cf0738553f8e75aaad5
+  patches:
+    - patches/0001-Specify-dynamic-version-in-pyproject.toml.patch
+    # https://github.com/MarshalX/python-libipld/pull/53
 
 build:
   script:
