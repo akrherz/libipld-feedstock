@@ -1,5 +1,5 @@
 {% set name = "libipld" %}
-{% set version = "3.0.0" %}
+{% set version = "3.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/libipld-{{ version }}.tar.gz
-  sha256: c532323efb36e63df8005f075afe01d726aa170999ee0cf0738553f8e75aaad5
+  sha256: 2970752de70e5fdcac4646900cdefaa0dca08db9b5d59c40b5496d99e3bffa64
   patches:
     - patches/0001-Specify-dynamic-version-in-pyproject.toml.patch
     # https://github.com/MarshalX/python-libipld/pull/53
@@ -16,7 +16,7 @@ build:
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-  number: 2
+  number: 0
 
 requirements:
   build:
