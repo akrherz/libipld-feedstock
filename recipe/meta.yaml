@@ -1,5 +1,5 @@
 {% set name = "libipld" %}
-{% set version = "3.1.0" %}
+{% set version = "3.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/libipld-{{ version }}.tar.gz
-  sha256: a460dac1e1a81b195702158b7bbfc94bbeeee31834bd314fc5bdd291509476ff
+  sha256: 4b9a9da0ea5d848e9fa12c700027619a1e37ecc1da39dbd1424c0e9062f29e44
 
 build:
   script:
