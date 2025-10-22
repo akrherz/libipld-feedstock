@@ -1,5 +1,5 @@
 {% set name = "libipld" %}
-{% set version = "3.1.1" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/libipld-{{ version }}.tar.gz
-  sha256: 4b9a9da0ea5d848e9fa12c700027619a1e37ecc1da39dbd1424c0e9062f29e44
+  sha256: 654230ffd9382a5eec28aad4e0dcdd93f11dd87da656939dbf138307f2867120
 
 build:
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-  number: 1
+  number: 0
 
 requirements:
   build:
