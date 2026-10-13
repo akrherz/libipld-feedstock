@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: libipld
-  version: "3.4.1"
+  version: "3.5.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/libipld-${{ version }}.tar.gz
-  sha256: 5d34fc8f90c954320fca7fef120e5fe9af58fb674ff7235f27870364de6c106f
+  sha256: 47e43e738fcf3cc9b2e57eda20af52f8fdb04425b1fa69abbd763866ece415db
 
 build:
-  number: 2
+  number: 0
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
@@ -31,7 +31,7 @@ requirements:
         - maturin >=1.2,<2.0
   host:
     - python
-    - maturin >=1.2,<2.0
+    - maturin >=1.8.7,<2.0
     - pip
   run:
     - python
